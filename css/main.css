@@ -9,6 +9,90 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+.library-header {
+    display: flex;
+    justify-content: center;
+}
+
 .library-container {
-    
+    width: 100%;
+}
+
+.new-book-container {
+    width: 100vw;
+}
+
+.new-book-form {
+    margin: 0 auto;
+    padding: 30px 50px;
+    width: 50vw;
+    max-width: 450px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.new-book-form h2 {
+    padding: 0 0 20px 0;
+    text-align: center;
+}
+
+.new-book-form input {
+    width: 100%;
+    padding: 7px 10px;
+    margin: 8px 0 16px 0;
+    border-radius: 4px;
+    outline: none;
+    border: solid 1px gray;
+}
+
+select {
+    width: 100%;
+    padding: 7px 10px;
+    margin: 8px 0 16px 0;
+    border-radius: 4px;
+    outline: none;
+    border: solid 1px gray;
+}
+
+.new-book-btns {
+    display: flex;
+    width: 100%;
+}
+
+#add-book-btn,
+#clear-fields-btn {
+    padding: 7px 10px;
+    margin-top: 16px;
+    background: #fff;
+    outline: none;
+    border: solid 1px gray;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+#add-book-btn {
+    width: 60%;
+}
+
+#clear-fields-btn {
+    width: 40%;
+    margin-left: 10px;
+}
+
+#add-book-btn:hover {
+    background: #36BA05;
+    color: #fff;
+    border: none;
+}
+
+#clear-fields-btn:hover {
+    background: #E21801;
+    color: #fff;
+    border: none;
+}
+
+#addBook {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
 }
