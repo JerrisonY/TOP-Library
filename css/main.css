@@ -5,13 +5,12 @@
 }
 
 body {
-    background-color: gray;
+    background-color: #FFF;
     font-family: 'Roboto', sans-serif;
 }
 
 .library-header {
-    display: flex;
-    justify-content: center;
+    text-align: center;
 }
 
 .library-container {
@@ -20,15 +19,19 @@ body {
 
 .new-book-container {
     width: 100vw;
+    position: fixed;
+    top: 10vh;
 }
 
 .new-book-form {
-    margin: 0 auto;
+    margin: auto;
     padding: 30px 50px;
     width: 50vw;
     max-width: 450px;
     background-color: #fff;
     border-radius: 10px;
+    position: relative;
+    border: solid 1px gray;
 }
 
 .new-book-form h2 {
@@ -82,17 +85,50 @@ select {
 #add-book-btn:hover {
     background: #36BA05;
     color: #fff;
-    border: none;
+    border: solid 1px #fff;
 }
 
 #clear-fields-btn:hover {
     background: #E21801;
     color: #fff;
-    border: none;
+    border: solid 1px #fff;
+}
+
+.close-book-form {
+    width: 100%;
+    position: absolute;
+    top: 6px;
+    left: 7px;
 }
 
 #addBook {
     position: fixed;
     bottom: 20px;
     right: 20px;
+
+    background-color: #fff;
+    color: darkgray;
+    border: solid 1px gray;
+    outline: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    transition: 0.2s;
+}
+
+#addBook:hover {
+    /* animation: fa-spin 2s infinite linear; */
+    transform: rotate(90deg);
+    background-color: #2196f3;
+    color: #fff;
+    border: solid 1px #2196f3;
+}
+
+.display-none {
+    display: none;
+}
+
+.background-blur {
+    filter: blur(5px);
+    /* background-color: gray; */
 }

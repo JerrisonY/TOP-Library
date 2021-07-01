@@ -1,4 +1,7 @@
-const addBook = document.querySelector('#addBook')
+const libraryContainer = document.querySelector('.library-container')
+const newBookWindow = document.querySelector('.new-book-container')
+const newBookBtn = document.querySelector('#addBook')
+const closeWindow = document.querySelector('.close-book-form')
 
 function Book(title, author, pages, read) {
     this.title = title
@@ -21,9 +24,13 @@ let myLibrary = [
 let addBookToLibrary = () => {
     
 }
- console.log(1+1)
 
- addBook.addEventListener('click', () => {
-    prompt('Name of book')
+newBookBtn.addEventListener('click', () => {
+    newBookWindow.classList.toggle('display-none')
+    libraryContainer.classList.toggle('background-blur')
+})
+
+ closeWindow.addEventListener('click', () => {
+     newBookWindow.classList.toggle('display-none')
+     libraryContainer.classList.toggle('background-blur')
  })
- 

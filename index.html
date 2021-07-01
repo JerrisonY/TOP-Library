@@ -14,58 +14,56 @@
     </head>
     <body>
         <main class="library-container">
+
             <header class="library-header">
                 <h1>My Library</h1>
             </header>    
             
-            <section class="new-book-container">
-                <form class="new-book-form">
-                    <h2>Add New Book</h2>
-                    <label for="book-title">Book Title</label>
-                    <br>
-                    <input type="text" placeholder="Title" id="book-title" required>
-                    <br>
-
-                    <label for="book-author">Book Author</label>
-                    <br>
-                    <input type="text" placeholder="Author" id="book-author" required>
-                    <br>
-
-                    <label for="number-pages">Number of Pages</label>
-                    <br>
-                    <input type="text" placeholder="Number of Pages" id="number-pages" required>
-                    <br>
-
-                    <label for="book-genre">Genre</label>
-                    <br>
-                    <input type="text" placeholder="Genre" id="book-genre" required>
-                    
-                    <label for="book-status">Book Status</label>
-                    <br>
-
-                    <select name="status" id="book-status" required>
-                        <option value="null" disabled selected>Did you read this book?</option>
-                        <option value="true">Yes, I have read it</option>
-                        <option value="false">No, I have not read it</option>
-                    </select>
-                    <br>
-
-                    <div class="new-book-btns">
-                        <input type="submit" id="add-book-btn" value="Add Book"></input>
-                        <input type="submit" id="clear-fields-btn" value="Clear Fields"></input>
-                    </div>
-                    
-
-                </form>
-            </section>
-            
-            <button id="addBook">+</button>
-
-
-
-
-
-            <script src="js/script.js"></script>
         </main>
+
+        <section class="new-book-container display-none">
+            <form class="new-book-form">
+                <h2>Add New Book</h2>
+
+                <span class="close-book-form"><i class="fas fa-times"></i></span>
+
+                <label for="book-title">Book Title</label>
+                <br>
+                <input type="text" placeholder="Title" id="book-title" required>
+                <br>
+
+                <label for="book-author">Book Author</label>
+                <br>
+                <input type="text" placeholder="Author" id="book-author" required>
+                <br>
+
+                <label for="number-pages">Number of Pages</label>
+                <br>
+                <input type="text" placeholder="Number of Pages" id="number-pages" required>
+                <br>
+
+                <label for="book-genre">Genre</label>
+                <br>
+                <input type="text" placeholder="Genre" id="book-genre" required>
+                
+                <label for="book-status">Book Status</label>
+                <br>
+
+                <select name="status" id="book-status" required>
+                    <option value="null" disabled selected>Did you read this book?</option>
+                    <option value="true">Yes, I have read it</option>
+                    <option value="false">No, I have not read it</option>
+                </select>
+                <br>
+
+                <div class="new-book-btns">
+                    <input type="submit" id="add-book-btn" value="Add Book"></input>
+                    <input type="submit" id="clear-fields-btn" value="Clear Fields"></input>
+                </div>
+                
+            </form>
+        </section>
+        <button id="addBook"><i class="fas fa-plus"></i></button>
+        <script src="js/script.js"></script>
     </body>
 </html>
