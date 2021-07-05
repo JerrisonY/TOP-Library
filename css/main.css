@@ -5,59 +5,155 @@
 }
 
 body {
-    background-color: #EEEEEE;
+    background-color: #191919;
     font-family: 'Roboto', sans-serif;
 }
 
 .library-container {
-    width: 80%;
-    margin: 0 auto;
-
+    display: flex;
+    height: 100vh;
+    /* align-items: center; */
+    padding: 40px;
+    justify-content: flex-end;
 }
 
 .library-header {
-    text-align: center;
+    align-self: center;
+    width: 40vw;
+    color: #fff;
+    font-family: 'EB Garamond', serif;
+    font-size: 4em;
+    position: fixed;
+    left: 40px;
+}
+
+.header-ruler {
+    width: 32vw;
+    margin-top: -103px;
+    border-color: #cf8c29;
+}
+
+.quote {
+    font-size: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+    padding-top: 40px;
+
+}
+
+.quote-person {
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-variant: small-caps;
 }
 
 .card-container {
-    width: 100%;
+    align-self: flex-start;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-    padding: 0 100px;
+    grid-template-columns: repeat(3, minmax(200px, 270px));
+    grid-gap: 20px;
+    /* padding: 0 100px; */
 }
 
 .new-card {
-    display: flex;
-    flex-direction: column;
-    /* background-color: #DAF7A6; */
-    color: #0F0F0F;
-    border-radius: 5px;
+    color: #fff;
     padding: 20px;
-    /* font-family: 'Bona Nova', serif; */
-    box-shadow: 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%), 0 2px 4px -1px rgb(0 0 0 / 30%);
+    /* font-family: 'EB Garamond', serif; */
+    /* box-shadow: 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%), 0 2px 4px -1px rgb(0 0 0 / 30%); */
+    border-top: solid 1px #fff;
+    border-bottom: solid 1px #fff;
     position: relative;
     transition: 0.2s;
 }
 
 .new-card h3 {
     padding-bottom: 7px;
+    font-size: 1.9em;
+    font-family: 'EB Garamond', serif;
 }
 
 .new-card p {
     font-size: 1.1em;
-    padding: 2px 0;
+    font-weight: 300;
+    padding: 3px 0;
+    
 }
 
-.new-card span {
+.new-card-exit {
     font-family: Arial, Helvetica, sans-serif;
     position: absolute;
     right: 9px;
     top: 4px;
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-weight: 700;
     cursor: pointer;
 }
+
+.read-container {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+
+    background: #cf8c29;
+    color: #191919;
+    border-radius: 5px;
+    padding: 3px 10px;
+    margin: 20px 0;
+
+    position: absolute;
+    bottom: 0px;
+    /* display: inline-block; */
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+
+/* **************** */
+/* Read Toggle styles */
+/* **************** */
+
+.read-div {
+    border-top: solid 1px #cf8c29;
+    border-bottom: solid 1px #cf8c29;
+}
+
+.read-div h3 {
+    color: #cf8c29;
+}
+
+.read-span {
+    background-color: #cf8c29;
+    color: #191919;
+    border: solid 1px #cf8c29;
+}
+
+.read-span:hover {
+    background-color: #191919;
+    color: #cf8c29;
+}
+
+.not-read-div {
+    border-top: solid 1px #fff;
+    border-bottom: solid 1px #fff;
+}
+
+.not-read-div h3 {
+    color: #fff;
+}
+
+.not-read-span {
+    background-color: #191919;
+    color: #fff;
+    border: solid 1px #fff;
+}
+
+.not-read-span:hover {
+    color: #cf8c29;
+    border: solid 1px #cf8c29;
+}
+
+/* **************** */
+/* New Book Container styles */
+/* **************** */
 
 .new-book-container {
     width: 100vw;
@@ -143,14 +239,19 @@ select {
     left: 7px;
 }
 
+
+/* ***************
+main container buttons
+*************** */
+
 #addBook {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 30px;
+    right: 30px;
 
-    background-color: #fff;
-    color: darkgray;
-    border: solid 1px gray;
+    background-color: #373a25;
+    color: #fff;
+    border: solid 1px #373a25;
     outline: none;
     width: 45px;
     height: 45px;
@@ -161,10 +262,39 @@ select {
 #addBook:hover {
     /* animation: fa-spin 2s infinite linear; */
     transform: rotate(90deg);
-    background-color: #2196f3;
+    /* background-color: #2196f3; */
+    background-color: #432706;
     color: #fff;
-    border: solid 1px #2196f3;
+    border: solid 1px #432706;
 }
+
+#light-mode {
+    position: fixed;
+    bottom: 20px;
+    left: 40px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 0.8em;
+
+    background: #191919;
+    border: solid 1px #fff;
+    outline: none;
+    color: #fff;
+    transition: 0.2s;
+    opacity: 0.6;
+}
+
+#light-mode:hover {
+    opacity: 1;
+    color: #191919;
+    background-color: #fff;
+
+}
+
+
+/* ***************
+stand-alone classes
+*************** */
 
 .display-none {
     display: none;
