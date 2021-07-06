@@ -4,12 +4,24 @@ const newBookWindow = document.querySelector('.new-book-container')
 const newBookBtn = document.querySelector('#addBook')
 const closeWindow = document.querySelector('.close-book-form')
 const addBook = document.querySelector('#add-book-btn')
-
+const newBookForm = document.querySelector('.new-book-form')
 
 let myLibrary = [
     {name: 'The City of Bone', author: 'Cassandra Clare', pages: 550, read: 'Read', genre: 'Fantasy'},
     {name: 'Harry Potter', author: 'J.K. Rowling', pages: 780, read: 'Read', genre: 'Fantasy'},
     {name: 'The Great Gatsby', author: 'Fitzgerald', pages: 450, read: 'Read', genre: 'Historical Fiction'},
+    {name: 'Percy Jackson and the Olympians', author: 'Coleman S.', pages: 250, read: 'Not read', genre: 'Fantasy'},
+    {name: 'Percy Jackson and the Olympians', author: 'Coleman S.', pages: 250, read: 'Not read', genre: 'Fantasy'},
+    {name: 'Percy Jackson and the Olympians', author: 'Coleman S.', pages: 250, read: 'Not read', genre: 'Fantasy'},
+    {name: 'Percy Jackson and the Olympians', author: 'Coleman S.', pages: 250, read: 'Not read', genre: 'Fantasy'},
+    {name: 'Percy Jackson and the Olympians', author: 'Coleman S.', pages: 250, read: 'Not read', genre: 'Fantasy'},
+    {name: 'Percy Jackson and the Olympians', author: 'Coleman S.', pages: 250, read: 'Not read', genre: 'Fantasy'},
+    {name: 'Percy Jackson and the Olympians', author: 'Coleman S.', pages: 250, read: 'Not read', genre: 'Fantasy'},
+    {name: 'Percy Jackson and the Olympians', author: 'Coleman S.', pages: 250, read: 'Not read', genre: 'Fantasy'},
+    {name: 'Percy Jackson and the Olympians', author: 'Coleman S.', pages: 250, read: 'Not read', genre: 'Fantasy'},
+    {name: 'Percy Jackson and the Olympians', author: 'Coleman S.', pages: 250, read: 'Not read', genre: 'Fantasy'},
+    {name: 'Percy Jackson and the Olympians', author: 'Coleman S.', pages: 250, read: 'Not read', genre: 'Fantasy'},
+    {name: 'Percy Jackson and the Olympians', author: 'Coleman S.', pages: 250, read: 'Not read', genre: 'Fantasy'},
     {name: 'Percy Jackson and the Olympians', author: 'Coleman S.', pages: 250, read: 'Not read', genre: 'Fantasy'},
 ];
 
@@ -70,7 +82,6 @@ let generateCards = () => {
     }
 }
 
-
 let addBookToLibrary = () => {
     const bookTitle = document.querySelector('#book-title');
     const bookAuthor = document.querySelector('#book-author');
@@ -84,7 +95,7 @@ let addBookToLibrary = () => {
     let genre = bookGenre.value;
     let read = bookStatus.value;
 
-    myLibrary.push({
+    myLibrary.push({ // pushes the new object into array
         name,
         author,
         pages, 
@@ -92,11 +103,11 @@ let addBookToLibrary = () => {
         read,
     })
 
-
-
-    // generateCards();
-    console.log(myLibrary)
-    debugger;
+    cardContainer.textContent = '' // clears the diplayed objects
+    generateCards(); // populates card container with existing cards + new ones
+    newBookForm.reset() // clears fields - only works because of form element
+    newBookWindow.classList.toggle('display-none')
+    libraryContainer.classList.toggle('background-blur')
 }
 
 addBook.addEventListener('click', () => {
@@ -113,7 +124,11 @@ closeWindow.addEventListener('click', () => {
     libraryContainer.classList.toggle('background-blur')
 })
 
+// stops form from clearing page
+newBookForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+})
 
 generateCards();
 
- // create more objects, find way to display array as cards (function)
+// on add book => clear fields, close prompt, clear DOM elements, readd with generate cards
