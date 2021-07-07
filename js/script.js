@@ -1,19 +1,23 @@
+const mainContainer = document.querySelector('body');
 const libraryContainer = document.querySelector('.library-container')
+const libraryHeader = document.querySelector('.library-header')
 const cardContainer = document.querySelector('.card-container')
 const newBookWindow = document.querySelector('.new-book-container')
 const newBookBtn = document.querySelector('#addBook')
 const closeWindow = document.querySelector('.close-book-form')
 const addBook = document.querySelector('#add-book-btn')
 const newBookForm = document.querySelector('.new-book-form')
+const lightMode = document.querySelector('#light-mode')
+
 
 let myLibrary = [
     {name: 'The City of Bone', author: 'Cassandra Clare', pages: 550, read: 'Read', genre: 'Fantasy'},
     {name: 'Harry Potter', author: 'J.K. Rowling', pages: 780, read: 'Read', genre: 'Fantasy'},
     {name: 'The Great Gatsby', author: 'Fitzgerald', pages: 450, read: 'Read', genre: 'Historical Fiction'},
     {name: 'Percy Jackson and the Olympians', author: 'Coleman S.', pages: 250, read: 'Not read', genre: 'Fantasy'},
-    {name: 'Percy Jackson and the Olympians', author: 'Coleman S.', pages: 250, read: 'Not read', genre: 'Fantasy'},
-    {name: 'Percy Jackson and the Olympians', author: 'Coleman S.', pages: 250, read: 'Not read', genre: 'Fantasy'},
-    {name: 'Percy Jackson and the Olympians', author: 'Coleman S.', pages: 250, read: 'Not read', genre: 'Fantasy'},
+    {name: 'Twilight', author: 'Stephanie Meyer', pages: 450, read: 'Not read', genre: 'Fantasy Romance'},
+    {name: 'Hercules the Great', author: 'L. Tolstoy', pages: 250, read: 'Read', genre: 'Historical Fiction'},
+    {name: 'Lord of the Rings', author: 'J.R. Tolkien', pages: 670, read: 'Not read', genre: 'Fantasy'},
     {name: 'Percy Jackson and the Olympians', author: 'Coleman S.', pages: 250, read: 'Not read', genre: 'Fantasy'},
     {name: 'Percy Jackson and the Olympians', author: 'Coleman S.', pages: 250, read: 'Not read', genre: 'Fantasy'},
     {name: 'Percy Jackson and the Olympians', author: 'Coleman S.', pages: 250, read: 'Not read', genre: 'Fantasy'},
@@ -79,7 +83,23 @@ let generateCards = () => {
         cardExit.addEventListener('click', () => {
             newCard.remove()
         })
+
     }
+
+    lightMode.addEventListener('click', () => {
+        if (lightMode.textContent === ' Dark Mode') {
+            lightMode.textContent = ' Light Mode'
+            mainContainer.classList.remove('lightMode-main-container')
+            libraryHeader.classList.remove('myLibrary-lightmode')
+        } else {
+            lightMode.textContent = ' Dark Mode'
+            mainContainer.classList.add('lightMode-main-container')
+            libraryHeader.classList.add('myLibrary-lightmode')
+            // if (cardRead.textContent === 'Read') {
+                cardTitle.classList.add('read-div-lightmode')
+            // }
+        }
+    })
 }
 
 let addBookToLibrary = () => {

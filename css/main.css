@@ -7,6 +7,7 @@
 body {
     background-color: #191919;
     font-family: 'Roboto', sans-serif;
+    transition: 1s;
 }
 
 .library-container {
@@ -292,6 +293,58 @@ main container buttons
 
 }
 
+
+/* ***************
+Light mode classes 
+*************** */
+
+.lightMode-main-container {
+    background-color: #fff;
+}
+
+.myLibrary-lightmode {
+    color: #191919;
+}
+
+.read-div-lightmode {
+    border-top: solid 1px #cf8c29;
+    border-bottom: solid 1px #cf8c29;
+}
+
+.read-div-lightmode h3 {
+    color: #2196f3;
+}
+
+.read-span-lightmode {
+    background-color: #cf8c29;
+    color: #191919;
+    border: solid 1px #cf8c29;
+}
+
+.read-span-lightmode:hover {
+    background-color: #191919;
+    color: #cf8c29;
+}
+
+.not-read-div-lightmode {
+    border-top: solid 1px #fff;
+    border-bottom: solid 1px #fff;
+}
+
+.not-read-div-lightmode h3 {
+    color: #fff;
+}
+
+.not-read-span-lightmode {
+    background-color: #191919;
+    color: #fff;
+    border: solid 1px #fff;
+}
+
+.not-read-span-lightmode:hover {
+    color: #cf8c29;
+    border: solid 1px #cf8c29;
+}
 
 /* ***************
 stand-alone classes
